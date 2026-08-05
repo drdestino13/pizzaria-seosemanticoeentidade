@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+---
+<Layout title="Onde Estamos Cadastrados | Pizzaria do Zé">
+  <ConceptTag bloco="Tradicional" numero={5} nome="Diretórios e Troca de Links" />
+  <h1>Onde Estamos Cadastrados</h1>
+  <ul>
+    <li>Google Perfil da Empresa (completo, com fotos e horário)</li>
+    <li>Guia Gastronômico Vila Mariana (guia real da cidade)</li>
+  </ul>
+  <p>
+    Só valem uns poucos cadastros relevantes, não uma lista gigante de diretórios
+    genéricos ou troca de link com lojas sem relação nenhuma com comida.
+  </p>
+  <CompareLink slug="diretorios" />
+</Layout>

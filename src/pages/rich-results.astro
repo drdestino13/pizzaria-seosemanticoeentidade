@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title="Como Aparecemos no Resultado de Busca | Pizzaria do Zé">
+  <ConceptTag bloco="Entidade" numero={11} nome="Rich Results" />
+  <h1>Como Aparecemos no Resultado de Busca</h1>
+  <p class="mock-label">Simulação ilustrativa — não é a interface real do Google.</p>
+  <div class="snippet-fake">
+    <div class="url">pizzaria-seosemanticoeentidade.vercel.app</div>
+    <div class="title">{NEGOCIO.nome} — Pizza Artesanal de Forno a Lenha</div>
+    <div><span class="stars">★★★★★</span> 312 avaliações · {NEGOCIO.horario}</div>
+    <div class="faq-item">Qual o preço da pizza grande? ⌄</div>
+    <div class="faq-item">Qual a área atendida? ⌄</div>
+  </div>
+  <p>
+    Isso é a prova visual de que o Google leu nosso schema e confiou nele — testamos
+    a URL no Teste de Resultados Ricos do Google e acompanhamos no Search Console
+    se apareceu de verdade, em vez de só marcar o código e esperar.
+  </p>
+  <CompareLink slug="rich-results" />
+</Layout>

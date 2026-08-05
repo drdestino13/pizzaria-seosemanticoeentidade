@@ -31,17 +31,60 @@ const { title, description = `${NEGOCIO.nome} — pizzaria de forno a lenha na $
       <nav>
         <a href="/">Início</a>
         <a href="/pizza-artesanal/">Pizza Artesanal</a>
-        <a href="/napolitana/">Napolitana</a>
         <a href="/cardapio/">Cardápio</a>
         <a href="/faq/">Perguntas Frequentes</a>
         <a href="/blog/pizza-de-calabresa/">Blog</a>
         <a href="/sobre-o-ze/">Sobre o Zé</a>
-        <a href="/simulacao-busca/">Como aparecemos no Google</a>
+        <a href="#indice-aula">Índice da Aula (24)</a>
       </nav>
     </header>
     <main>
       <slot />
     </main>
+    <section id="indice-aula" class="site-index">
+      <h2>Índice da Aula — 24 Conceitos (jeito CERTO)</h2>
+      <div class="site-index-grid">
+        <div>
+          <strong>Bloco Tradicional</strong>
+          <ul>
+            <li><a href="/keyword-stuffing/">1. Keyword Stuffing</a></li>
+            <li><a href="/backlinks-comprados/">2. Backlinks Comprados em Massa</a></li>
+            <li><a href="/dominio/">3. Exact Match Domain</a></li>
+            <li><a href="/autoridade-de-links/">4. PageRank Clássico</a></li>
+            <li><a href="/diretorios/">5. Diretórios e Troca de Links</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Bloco Semântico</strong>
+          <ul>
+            <li><a href="/co-ocorrencia/">1. Co-ocorrência Semântica</a></li>
+            <li><a href="/profundidade-de-conteudo/">2. Profundidade de Conteúdo</a></li>
+            <li><a href="/nlp-bert/">3. NLP e BERT</a></li>
+            <li><a href="/napolitana/">4. Contexto vs Palavra-chave Isolada</a></li>
+            <li><a href="/pizza-artesanal/">5. Cluster de Conteúdo</a></li>
+            <li><a href="/faq/">6. Query Fan-Out</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Bloco Entidade</strong>
+          <ul>
+            <li><a href="/entidade/">1. Entidade</a></li>
+            <li><a href="/knowledge-graph/">2. Knowledge Graph</a></li>
+            <li><a href="/">3. Entity Home</a></li>
+            <li><a href="/schema-de-entidade/">4. Schema de Entidade</a></li>
+            <li><a href="/json-ld-grafo/">5. JSON-LD: Grafo de Propriedades</a></li>
+            <li><a href="/desambiguacao/">6. Desambiguação de Entidade</a></li>
+            <li><a href="/sameas/">7. SameAs</a></li>
+            <li><a href="/wikidata/">8. Wikidata e Wikipédia</a></li>
+            <li><a href="/google-business-profile/">9. Google Business Profile</a></li>
+            <li><a href="/knowledge-panel/">10. Knowledge Panel</a></li>
+            <li><a href="/rich-results/">11. Rich Results</a></li>
+            <li><a href="/blog/pizza-de-calabresa/">12. Relevância de Entidade (Salience)</a></li>
+            <li><a href="/neeatt/">13. N-E-E-A-T-T</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <footer class="site-footer">
       <div class="footer-col">
         <strong>{NEGOCIO.nome}</strong><br />

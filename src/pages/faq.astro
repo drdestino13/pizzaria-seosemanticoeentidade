@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
 import { NEGOCIO } from "../data/negocio";
 
 const perguntas = [
@@ -38,10 +39,5 @@ const faqSchema = {
     ))}
   </dl>
 
-  <ConceptTag bloco="Semântico" numero={3} nome="NLP e BERT" />
-  <p class="natural-copy">
-    "Aceitamos pedido sem taxa de entrega até 3 km de distância." Frase clara e direta
-    — o Google não precisa mais das palavras exatas da busca pra entender o que
-    você quis dizer, mas precisa que a frase faça sentido pra um humano.
-  </p>
+  <CompareLink slug="faq" />
 </Layout>

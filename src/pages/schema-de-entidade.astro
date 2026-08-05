@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+import { schemaGrafoBase } from "../data/negocio";
+
+const exemplo = schemaGrafoBase()["@graph"][0];
+---
+<Layout title="O Schema que Declara Quem Somos | Pizzaria do Zé">
+  <ConceptTag bloco="Entidade" numero={4} nome="Schema de Entidade" />
+  <h1>O Schema que Declara Quem Somos</h1>
+  <p>
+    Este é o schema real (<code>schema.org/Restaurant</code>) publicado na nossa
+    home, declarando que existe um NEGÓCIO por trás do site — não apenas um cardápio.
+    O schema de produto (que você vê no <a href="/cardapio/">cardápio</a>) é o
+    cardápio na mesa; este aqui é o CNPJ na parede:
+  </p>
+  <pre class="code-block">{JSON.stringify(exemplo, null, 2)}</pre>
+  <CompareLink slug="schema-de-entidade" />
+</Layout>

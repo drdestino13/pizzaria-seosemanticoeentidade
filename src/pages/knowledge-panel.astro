@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title="Nosso Painel de Busca | Pizzaria do Zé">
+  <ConceptTag bloco="Entidade" numero={10} nome="Knowledge Panel" />
+  <h1>Nosso Painel de Busca</h1>
+  <p class="mock-label">Simulação ilustrativa — não é a interface real do Google.</p>
+  <div class="mock-panel">
+    <strong>{NEGOCIO.nome}</strong><br />
+    Pizzaria em {NEGOCIO.bairro}, {NEGOCIO.cidade}<br />
+    ★★★★★ · {NEGOCIO.horario} · {NEGOCIO.telefoneExibicao}<br />
+    <em>Painel gerado porque os dados batem em todas as fontes: site, GBP e sameAs.</em>
+  </div>
+  <p>
+    O painel só aparece quando o Google tem certeza de quem você é — perfil completo,
+    avaliações reais, fotos de verdade e o site confirmando os mesmos dados.
+  </p>
+  <CompareLink slug="knowledge-panel" />
+</Layout>

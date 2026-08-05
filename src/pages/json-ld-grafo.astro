@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+import { schemaGrafoBase } from "../data/negocio";
+
+const grafo = schemaGrafoBase();
+---
+<Layout title="O Grafo de Propriedades Conectado | Pizzaria do Zé">
+  <ConceptTag bloco="Entidade" numero={5} nome="JSON-LD: o Grafo de Propriedades" />
+  <h1>O Grafo de Propriedades Conectado</h1>
+  <p>
+    Não é uma ficha solta, é uma teia de fichas amarradas por <code>@id</code>. Veja
+    como o <code>Restaurant</code>, o <code>Person</code> (fundador) e o
+    <code>WebSite</code> se referenciam entre si no mesmo <code>@graph</code>,
+    publicado de verdade na nossa <a href="/">home</a>:
+  </p>
+  <pre class="code-block">{JSON.stringify(grafo, null, 2)}</pre>
+  <p>
+    Cada sabor no <a href="/cardapio/">cardápio</a> também aponta de volta pra este
+    mesmo <code>@id</code> do negócio via <code>isPartOf</code> — nada fica solto.
+  </p>
+  <CompareLink slug="json-ld-grafo" />
+</Layout>

@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
 import { NEGOCIO } from "../data/negocio";
 ---
 <Layout title={`Pizza Napolitana em ${NEGOCIO.bairro} | ${NEGOCIO.nome}`}>
@@ -19,4 +20,5 @@ import { NEGOCIO } from "../data/negocio";
     (Contexto completo: ninguém confunde com bolacha ou com o bairro "Napolitana" —
     a foto do forno a lenha e a explicação da receita deixam claro do que se trata.)
   </p>
+  <CompareLink slug="napolitana" />
 </Layout>

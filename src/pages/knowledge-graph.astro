@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+import { NEGOCIO, SAME_AS } from "../data/negocio";
+---
+<Layout title={`Nossos Dados em Todo Canto | ${NEGOCIO.nome}`}>
+  <ConceptTag bloco="Entidade" numero={2} nome="Knowledge Graph" />
+  <h1>Nossos Dados em Todo Canto</h1>
+  <p>
+    O Knowledge Graph do Google é a agenda enorme onde ele guarda as coisas que
+    conhece e como elas se ligam. Pra termos uma "ficha" confiável lá, nosso nome,
+    endereço e telefone precisam bater em toda fonte:
+  </p>
+  <table>
+    <tr><td>Neste site</td><td>{NEGOCIO.nome} · {NEGOCIO.endereco} · {NEGOCIO.telefoneExibicao}</td></tr>
+    <tr><td>Rodapé (todas as páginas)</td><td>{NEGOCIO.nome} · {NEGOCIO.endereco} · {NEGOCIO.telefoneExibicao}</td></tr>
+    <tr><td>Schema JSON-LD</td><td>{NEGOCIO.nome} · mesmo endereço, mesmo telefone</td></tr>
+    {SAME_AS.map((url) => <tr><td>{new URL(url).hostname}</td><td>{NEGOCIO.nome} · dados idênticos</td></tr>)}
+  </table>
+  <p>É essa consistência, repetida em toda fonte, que permite ao Google montar uma ficha confiável.</p>
+  <CompareLink slug="knowledge-graph" />
+</Layout>

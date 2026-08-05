@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`${NEGOCIO.nome} da ${NEGOCIO.bairro}`}>
+  <ConceptTag bloco="Entidade" numero={6} nome="Desambiguação de Entidade" />
+  <h1>{NEGOCIO.nome} da {NEGOCIO.bairro}, {NEGOCIO.cidade}</h1>
+  <p>
+    Existem outras "Pizzaria do Zé" em outras cidades do Brasil. Por isso, amarramos
+    sempre o nome ao bairro e à cidade — em todo lugar que nos mencionamos, dizemos
+    <strong> {NEGOCIO.nome}, {NEGOCIO.bairro}, {NEGOCIO.cidade}</strong>, nunca só
+    "Pizzaria do Zé" solto.
+  </p>
+  <p>
+    Isso tira a dúvida do Google (e do cliente): quem procura por nós na {NEGOCIO.bairro}
+    encontra exatamente o negócio certo, não um homônimo em outro estado.
+  </p>
+  <CompareLink slug="desambiguacao" />
+</Layout>

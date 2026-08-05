@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`Quem é a ${NEGOCIO.nome}`}>
+  <ConceptTag bloco="Entidade" numero={1} nome="Entidade" />
+  <h1>Quem é a {NEGOCIO.nome}</h1>
+  <p>
+    "Pizza" é uma palavra. A <strong>{NEGOCIO.nome}</strong> é uma coisa real: um
+    negócio com endereço, telefone, dono e cardápio, sempre iguais em todo lugar.
+  </p>
+  <p>
+    Veja o código-fonte desta página (<code>view-source</code>) ou da
+    <a href="/">página inicial</a> e procure por <code>application/ld+json</code>:
+    o Google encontra ali um <code>Restaurant</code> conectado a um <code>Person</code>
+    (o fundador, <a href="/sobre-o-ze/">o Zé</a>) e a um <code>WebSite</code>, tudo no
+    mesmo grafo — não apenas a palavra "pizzaria" repetida no texto.
+  </p>
+  <CompareLink slug="entidade" />
+</Layout>

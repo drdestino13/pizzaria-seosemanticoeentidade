@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ConceptTag from "../components/ConceptTag.astro";
 import { NEGOCIO, SITE } from "../data/negocio";
 
 const sabores = [
@@ -22,17 +21,11 @@ const cardapioSchema = {
 ---
 <Layout title={`Cardápio | ${NEGOCIO.nome}`} jsonLd={cardapioSchema}>
   <h1>Cardápio</h1>
-
-  <ConceptTag bloco="Entidade" numero={4} nome="Schema de Entidade" />
-  <ConceptTag bloco="Entidade" numero={5} nome="JSON-LD: o Grafo de Propriedades" />
   <p>
-    Cada sabor tem seu <code>schema.org/Product</code>, mas todos apontam de volta pro
-    <code>@id</code> do negócio (<code>{SITE}/#negocio</code>) via <code>isPartOf</code> e
-    <code>brand</code>. O schema de produto é o cardápio na mesa; o schema de entidade
-    (na home) é o CNPJ na parede — aqui os dois estão conectados no mesmo grafo, não
-    soltos.
+    Cada sabor tem seu próprio schema <code>Product</code>, conectado ao schema do
+    negócio — veja os detalhes em <a href="/schema-de-entidade/">Schema de Entidade</a>
+    e <a href="/json-ld-grafo/">JSON-LD: o Grafo de Propriedades</a>.
   </p>
-
   <ul>
     {sabores.map((s) => <li>{s.nome} — R$ {s.preco.replace(".00", ",00")}</li>)}
   </ul>

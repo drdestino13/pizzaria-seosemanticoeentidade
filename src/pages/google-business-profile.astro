@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title="Nosso Perfil no Google | Pizzaria do Zé">
+  <ConceptTag bloco="Entidade" numero={9} nome="Google Business Profile" />
+  <h1>Nosso Perfil no Google</h1>
+  <p class="mock-label">Simulação ilustrativa — não é a interface real do Google.</p>
+  <div class="mock-panel">
+    <strong>{NEGOCIO.nome}</strong> · Pizzaria · ★★★★★ (312 avaliações)<br />
+    {NEGOCIO.endereco}<br />
+    {NEGOCIO.telefoneExibicao} · {NEGOCIO.horario}<br />
+    Perfil 100% preenchido, com fotos reais e dados idênticos ao site.
+  </div>
+  <p>
+    Preencher 100% do perfil e escrever no site exatamente o mesmo nome, endereço e
+    telefone que estão lá é o que dá ao Google dados conferidos sobre o negócio.
+  </p>
+  <CompareLink slug="google-business-profile" />
+</Layout>

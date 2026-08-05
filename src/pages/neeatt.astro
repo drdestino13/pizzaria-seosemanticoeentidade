@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+---
+<Layout title="Provas de Fora, Não Autoelogio | Pizzaria do Zé">
+  <ConceptTag bloco="Entidade" numero={13} nome="N-E-E-A-T-T" />
+  <h1>Provas de Fora, Não Autoelogio</h1>
+  <p>
+    Não basta ser bom, precisa ter gente de fora falando de você. Aqui está nossa
+    prova real, vinda de outras fontes — não de nós mesmos:
+  </p>
+  <div class="review"><span class="stars">★★★★★</span> "Melhor massa de fermentação natural que já comi em SP." — Marina T., avaliação Google</div>
+  <div class="review"><span class="stars">★★★★★</span> "Citada na matéria do Guia Gastronômico Vila Mariana como referência em forno a lenha."</div>
+  <p>
+    Os artigos técnicos do nosso blog são assinados por
+    <a href="/sobre-o-ze/">{"o Zé"}</a>, fundador e pizzaiolo — com nome, foto e
+    histórico reais, não um "somos referência em pizza" anônimo sem fonte nenhuma
+    confirmando.
+  </p>
+  <CompareLink slug="neeatt" />
+</Layout>

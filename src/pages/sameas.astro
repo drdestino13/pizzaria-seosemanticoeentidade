@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+import { NEGOCIO, SAME_AS } from "../data/negocio";
+---
+<Layout title={`Nossos Perfis Oficiais | ${NEGOCIO.nome}`}>
+  <ConceptTag bloco="Entidade" numero={7} nome="SameAs (Verificação de Entidade)" />
+  <h1>Nossos Perfis Oficiais</h1>
+  <p>
+    Um "sou eu mesmo, olha lá" pro Google: apontamos, do nosso schema, todos os
+    perfis oficiais — e cada um deles linka de volta pra cá, com o mesmo nome e
+    endereço.
+  </p>
+  <ul>
+    {SAME_AS.map((url) => <li><a href={url} rel="me noopener" target="_blank">{new URL(url).hostname}</a></li>)}
+  </ul>
+  <pre class="code-block">{`"sameAs": [\n${SAME_AS.map((u) => `  "${u}"`).join(",\n")}\n]`}</pre>
+  <CompareLink slug="sameas" />
+</Layout>

@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+---
+<Layout title="Nossos Links de Verdade | Pizzaria do Zé">
+  <ConceptTag bloco="Tradicional" numero={4} nome="PageRank Clássico" />
+  <h1>Nossos Links de Verdade</h1>
+  <div class="stat-box">
+    🔗 12 links de fontes confiáveis do bairro — não 1.204 links de sites aleatórios.
+  </div>
+  <p>
+    A lógica de link ainda existe, mas hoje o que importa é quem votou e por quê.
+    Preferimos poucos links de quem tem a ver com pizza e forno a lenha do que
+    milhares de links de sites sem relação nenhuma com o assunto.
+  </p>
+  <CompareLink slug="autoridade-de-links" />
+</Layout>

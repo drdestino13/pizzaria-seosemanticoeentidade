@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import CompareLink from "../components/CompareLink.astro";
+---
+<Layout title="Por Que Não Estamos no Wikidata | Pizzaria do Zé">
+  <ConceptTag bloco="Entidade" numero={8} nome="Wikidata e Wikipédia" />
+  <h1>Por Que Não Estamos no Wikidata</h1>
+  <p>
+    Não temos ficha no Wikidata — e está tudo bem: pizzaria de bairro não tem
+    relevância pública pra isso, isso vale pra marcas e empresas grandes. Nossa
+    "certidão" real de que existimos de verdade é a consistência entre Google
+    Perfil da Empresa, Instagram e iFood, todos com o mesmo nome e telefone (veja
+    <a href="/sameas/">SameAs</a>).
+  </p>
+  <CompareLink slug="wikidata" />
+</Layout>
