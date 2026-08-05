@@ -1,0 +1,9 @@
+---
+interface Props {
+  bloco: "Tradicional" | "Semântico" | "Entidade";
+  numero: number;
+  nome: string;
+}
+const { bloco, numero, nome } = Astro.props;
+---
+<span class="concept-tag">Aula · Bloco {bloco} #{numero} — {nome} (jeito CERTO)</span>

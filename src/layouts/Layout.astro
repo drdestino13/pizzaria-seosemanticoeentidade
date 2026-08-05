@@ -1,0 +1,67 @@
+---
+import { NEGOCIO, SAME_AS } from "../data/negocio";
+
+interface Props {
+  title: string;
+  description?: string;
+  jsonLd?: object;
+}
+const { title, description = `${NEGOCIO.nome} — pizzaria de forno a lenha na ${NEGOCIO.bairro}, ${NEGOCIO.cidade}.`, jsonLd } = Astro.props;
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <title>{title}</title>
+    <style is:global>
+      @import "../styles/global.css";
+    </style>
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <div class="banner">
+      Demonstração educacional (aula "As 3 Eras do SEO") — {NEGOCIO.nome} aplicando SEO Semântico + SEO de Entidade. Não é um negócio real.
+    </div>
+    <header class="site-header">
+      <a href="/" class="logo">{NEGOCIO.nome}</a>
+      <nav>
+        <a href="/">Início</a>
+        <a href="/pizza-artesanal/">Pizza Artesanal</a>
+        <a href="/napolitana/">Napolitana</a>
+        <a href="/cardapio/">Cardápio</a>
+        <a href="/faq/">Perguntas Frequentes</a>
+        <a href="/blog/pizza-de-calabresa/">Blog</a>
+        <a href="/sobre-o-ze/">Sobre o Zé</a>
+        <a href="/simulacao-busca/">Como aparecemos no Google</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="footer-col">
+        <strong>{NEGOCIO.nome}</strong><br />
+        {NEGOCIO.endereco}<br />
+        Tel: {NEGOCIO.telefoneExibicao}<br />
+        {NEGOCIO.horario}
+      </div>
+      <div class="footer-col">
+        <strong>Perfis oficiais (sameAs)</strong>
+        <ul>
+          {SAME_AS.map((url) => <li><a href={url} rel="me noopener" target="_blank">{new URL(url).hostname}</a></li>)}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <strong>Guias reais da região</strong>
+        <ul>
+          <li>Google Perfil da Empresa</li>
+          <li>Guia Gastronômico Vila Mariana</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

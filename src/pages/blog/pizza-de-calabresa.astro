@@ -1,0 +1,46 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ConceptTag from "../../components/ConceptTag.astro";
+import { NEGOCIO, SITE } from "../../data/negocio";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Pizza de Calabresa: a receita e o preparo, passo a passo",
+  author: { "@id": `${SITE}/sobre-o-ze/#pessoa` },
+  publisher: { "@id": `${SITE}/#negocio` },
+  datePublished: "2026-06-10",
+};
+---
+<Layout title="Pizza de Calabresa: Receita e Preparo | Blog Pizzaria do Zé" jsonLd={articleSchema}>
+  <h1>Pizza de Calabresa: a Receita e o Preparo</h1>
+  <p class="mock-label">Por {NEGOCIO.dono}, fundador e pizzaiolo — <a href="/sobre-o-ze/">ver perfil</a></p>
+
+  <ConceptTag bloco="Entidade" numero={12} nome="Relevância de Entidade (Salience)" />
+  <p>
+    Uma página inteira dedicada a um único assunto — a pizza de calabresa — pesa muito
+    mais pro Google do que aparecer uma vez, de passagem, numa lista de "10 comidas
+    de festa". Aqui, o assunto central da página É a calabresa.
+  </p>
+
+  <h2>Ingredientes</h2>
+  <ul>
+    <li>Massa de fermentação natural de 48h</li>
+    <li>Molho de tomate italiano</li>
+    <li>Calabresa artesanal fatiada fina</li>
+    <li>Cebola roxa em rodelas</li>
+    <li>Mussarela de búfala</li>
+  </ul>
+
+  <h2>Preparo</h2>
+  <p>
+    Abrimos a massa até 30cm, espalhamos o molho, distribuímos a calabresa e a cebola,
+    finalizamos com a mussarela e levamos ao forno a lenha a 400°C por 90 segundos.
+  </p>
+
+  <h2>Perguntas sobre esta pizza</h2>
+  <div class="faq-block">
+    <dt>É apimentada?</dt>
+    <dd>Levemente — a calabresa artesanal tem um toque de pimenta, sem ser picante.</dd>
+  </div>
+</Layout>

@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import { NEGOCIO, SITE } from "../data/negocio";
+
+const sabores = [
+  { nome: "Pizza Calabresa Grande", preco: "45.00" },
+  { nome: "Pizza Mussarela de Búfala Grande", preco: "42.00" },
+  { nome: "Pizza Napolitana Grande", preco: "48.00" },
+];
+
+const cardapioSchema = {
+  "@context": "https://schema.org",
+  "@graph": sabores.map((s) => ({
+    "@type": "Product",
+    name: s.nome,
+    offers: { "@type": "Offer", price: s.preco, priceCurrency: "BRL" },
+    isPartOf: { "@id": `${SITE}/#negocio` },
+    brand: { "@id": `${SITE}/#negocio` },
+  })),
+};
+---
+<Layout title={`Cardápio | ${NEGOCIO.nome}`} jsonLd={cardapioSchema}>
+  <h1>Cardápio</h1>
+
+  <ConceptTag bloco="Entidade" numero={4} nome="Schema de Entidade" />
+  <ConceptTag bloco="Entidade" numero={5} nome="JSON-LD: o Grafo de Propriedades" />
+  <p>
+    Cada sabor tem seu <code>schema.org/Product</code>, mas todos apontam de volta pro
+    <code>@id</code> do negócio (<code>{SITE}/#negocio</code>) via <code>isPartOf</code> e
+    <code>brand</code>. O schema de produto é o cardápio na mesa; o schema de entidade
+    (na home) é o CNPJ na parede — aqui os dois estão conectados no mesmo grafo, não
+    soltos.
+  </p>
+
+  <ul>
+    {sabores.map((s) => <li>{s.nome} — R$ {s.preco.replace(".00", ",00")}</li>)}
+  </ul>
+</Layout>

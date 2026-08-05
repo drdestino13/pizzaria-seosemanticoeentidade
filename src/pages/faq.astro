@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import { NEGOCIO } from "../data/negocio";
+
+const perguntas = [
+  { q: "Qual o preço da pizza grande?", a: "As pizzas grandes vão de R$ 42 a R$ 52, dependendo do sabor. Veja o cardápio completo." },
+  { q: "Qual o tempo de entrega?", a: "Em média 35 a 50 minutos para a Vila Mariana e bairros vizinhos." },
+  { q: "Qual a área atendida?", a: `Entregamos em toda a ${NEGOCIO.bairro}, Vila Clementino, Ipiranga e Saúde.` },
+  { q: "Tem opção sem lactose?", a: "Sim, temos massa e queijo vegetal sem lactose mediante aviso na hora do pedido." },
+  { q: "Qual o horário de funcionamento?", a: NEGOCIO.horario + "." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: perguntas.map((p) => ({
+    "@type": "Question",
+    name: p.q,
+    acceptedAnswer: { "@type": "Answer", text: p.a },
+  })),
+};
+---
+<Layout title={`Perguntas Frequentes | ${NEGOCIO.nome}`} jsonLd={faqSchema}>
+  <h1>Perguntas Frequentes</h1>
+  <ConceptTag bloco="Semântico" numero={6} nome="Query Fan-Out" />
+  <p>
+    Quando alguém pergunta "dá pra jantar hoje?", por dentro a IA quebra isso em várias
+    perguntas: preço, tempo de entrega, área atendida, opções sem lactose, horário.
+    Respondemos todas aqui, com schema <code>FAQPage</code> real:
+  </p>
+  <dl>
+    {perguntas.map((p) => (
+      <div class="faq-block">
+        <dt>{p.q}</dt>
+        <dd>{p.a}</dd>
+      </div>
+    ))}
+  </dl>
+
+  <ConceptTag bloco="Semântico" numero={3} nome="NLP e BERT" />
+  <p class="natural-copy">
+    "Aceitamos pedido sem taxa de entrega até 3 km de distância." Frase clara e direta
+    — o Google não precisa mais das palavras exatas da busca pra entender o que
+    você quis dizer, mas precisa que a frase faça sentido pra um humano.
+  </p>
+</Layout>

@@ -1,0 +1,30 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ConceptTag from "../../components/ConceptTag.astro";
+---
+<Layout title="Tudo Sobre Pizza Artesanal | Pizzaria do Zé">
+  <h1>Tudo Sobre Pizza Artesanal</h1>
+
+  <ConceptTag bloco="Semântico" numero={5} nome="Cluster de Conteúdo" />
+  <p>
+    Esta é a página central sobre pizza artesanal. Em vez de escrever um pouco de
+    tudo (marmita, açaí, sushi), preferimos dominar um assunto por completo. Abaixo,
+    os quatro pilares que fazem uma pizza artesanal de verdade — cada um com sua
+    própria página, todos ligados aqui e uns aos outros.
+  </p>
+
+  <ConceptTag bloco="Semântico" numero={2} nome="Profundidade de Conteúdo" />
+  <p>
+    Não é sobre escrever muito, é sobre não deixar pergunta sem resposta: o que muda
+    entre uma pizza industrial e uma artesanal está na massa, na fermentação, no forno
+    e na escolha do queijo. É isso que você encontra nas quatro páginas abaixo — sem
+    dez parágrafos de história milenar antes de chegar à informação útil.
+  </p>
+
+  <div class="hub-links">
+    <a href="/pizza-artesanal/massa/">A Massa</a>
+    <a href="/pizza-artesanal/fermentacao/">Fermentação Natural</a>
+    <a href="/pizza-artesanal/forno-a-lenha/">Forno a Lenha</a>
+    <a href="/pizza-artesanal/queijo/">Escolha do Queijo</a>
+  </div>
+</Layout>

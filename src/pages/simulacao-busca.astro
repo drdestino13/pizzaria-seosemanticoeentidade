@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`Como Aparecemos no Google | ${NEGOCIO.nome}`}>
+  <h1>Como Aparecemos na Busca</h1>
+  <p class="mock-label">Simulações ilustrativas — não são a interface real do Google.</p>
+
+  <ConceptTag bloco="Entidade" numero={9} nome="Google Business Profile" />
+  <div class="mock-panel">
+    <strong>{NEGOCIO.nome}</strong> · Pizzaria · ★★★★★ (312 avaliações)<br />
+    {NEGOCIO.endereco}<br />
+    {NEGOCIO.telefoneExibicao} · {NEGOCIO.horario}<br />
+    Perfil 100% preenchido, com fotos reais e dados idênticos ao site.
+  </div>
+
+  <ConceptTag bloco="Entidade" numero={10} nome="Knowledge Panel" />
+  <div class="mock-panel">
+    <strong>{NEGOCIO.nome}</strong><br />
+    Pizzaria em {NEGOCIO.bairro}, {NEGOCIO.cidade}<br />
+    ★★★★★ · {NEGOCIO.horario} · {NEGOCIO.telefoneExibicao}<br />
+    <em>Painel gerado porque os dados batem em todas as fontes: site, GBP e sameAs.</em>
+  </div>
+
+  <ConceptTag bloco="Entidade" numero={11} nome="Rich Results" />
+  <div class="snippet-fake">
+    <div class="url">pizzaria-seosemanticoeentidade.vercel.app</div>
+    <div class="title">{NEGOCIO.nome} — Pizza Artesanal de Forno a Lenha</div>
+    <div><span class="stars">★★★★★</span> 312 avaliações · {NEGOCIO.horario}</div>
+    <div class="faq-item">Qual o preço da pizza grande? ⌄</div>
+    <div class="faq-item">Qual a área atendida? ⌄</div>
+  </div>
+
+  <ConceptTag bloco="Entidade" numero={8} nome="Wikidata e Wikipédia" />
+  <p>
+    Não temos ficha no Wikidata — e está tudo bem: pizzaria de bairro não tem
+    relevância pública pra isso. Nossa "certidão" real é a consistência entre Google
+    Perfil da Empresa, Instagram e iFood, todos com o mesmo nome e telefone.
+  </p>
+</Layout>

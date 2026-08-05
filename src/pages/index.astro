@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import { NEGOCIO, SAME_AS, schemaGrafoBase } from "../data/negocio";
+---
+<Layout
+  title={`${NEGOCIO.nome} — Pizza Artesanal de Forno a Lenha em ${NEGOCIO.bairro}, ${NEGOCIO.cidade}`}
+  jsonLd={schemaGrafoBase()}
+>
+  <h1>{NEGOCIO.nome}</h1>
+  <p><strong>Pizza artesanal de forno a lenha na {NEGOCIO.bairro}, {NEGOCIO.cidade}/{NEGOCIO.estado}.</strong></p>
+
+  <ConceptTag bloco="Tradicional" numero={1} nome="Keyword Stuffing (texto natural)" />
+  <ConceptTag bloco="Semântico" numero={1} nome="Co-ocorrência Semântica" />
+  <div class="natural-copy">
+    Nossa massa descansa 48 horas em fermentação natural antes de ir pro forno a
+    lenha a 400°C. É esse tempo de fermentação, junto com a mussarela de búfala e a
+    borda alta e aerada, que faz a diferença de uma pizza artesanal de verdade.
+  </div>
+
+  <ConceptTag bloco="Tradicional" numero={3} nome="Exact Match Domain" />
+  <p>
+    Nosso domínio é o nome da nossa marca, não uma palavra-chave genérica — construímos
+    a reputação em cima do nome <strong>{NEGOCIO.nome}</strong>, não em cima de um
+    domínio tipo "melhorpizzadesaopaulo.com.br".
+  </p>
+
+  <ConceptTag bloco="Tradicional" numero={2} nome="Backlinks (qualidade, não quantidade)" />
+  <div class="natural-copy">
+    "A massa de fermentação natural da Pizzaria do Zé é hoje uma das mais respeitadas
+    da Vila Mariana." — <em>Guia Gastronômico Vila Mariana</em>. Um link assim, de
+    quem realmente entende do assunto, vale mais que mil links de sites aleatórios.
+  </div>
+
+  <ConceptTag bloco="Tradicional" numero={4} nome="PageRank Clássico (qualidade dos votos)" />
+  <div class="stat-box">
+    🔗 12 links de fontes confiáveis do bairro — não 1.204 links de sites aleatórios.
+  </div>
+
+  <ConceptTag bloco="Tradicional" numero={5} nome="Diretórios e Troca de Links" />
+  <p>
+    Estamos bem cadastrados no Google Perfil da Empresa e em 2 guias reais da cidade
+    (veja o rodapé) — não em 80 diretórios genéricos trocando link com loja de piscina.
+  </p>
+
+  <ConceptTag bloco="Entidade" numero={1} nome="Entidade" />
+  <p>
+    "Pizza" é uma palavra. A <strong>{NEGOCIO.nome}</strong> é uma coisa real: um
+    negócio com endereço, telefone, dono e cardápio, sempre iguais em todo lugar —
+    veja o código-fonte desta página (<code>view-source</code>) e procure por
+    <code>application/ld+json</code>: o Google encontra ali um <code>Restaurant</code>
+    conectado a um <code>Person</code> (o fundador) e a um <code>WebSite</code>,
+    tudo no mesmo grafo.
+  </p>
+
+  <ConceptTag bloco="Entidade" numero={2} nome="Knowledge Graph" />
+  <p>
+    Nome, endereço e telefone batem em todo canto: neste site, no rodapé, no schema
+    e em cada perfil oficial listado abaixo. É essa consistência que permite ao
+    Google montar uma ficha confiável sobre o negócio.
+  </p>
+
+  <ConceptTag bloco="Entidade" numero={3} nome="Entity Home" />
+  <p>
+    Esta página é a nossa <strong>Entity Home</strong>: a fonte oficial que responde
+    "quem é esse negócio". Para a biografia completa do fundador, veja
+    <a href="/sobre-o-ze/">Sobre o Zé</a>.
+  </p>
+
+  <ConceptTag bloco="Entidade" numero={6} nome="Desambiguação de Entidade" />
+  <p>
+    Somos a <strong>{NEGOCIO.nome} da {NEGOCIO.bairro}, {NEGOCIO.cidade}</strong> —
+    sempre amarrando o nome ao bairro e à cidade, porque existem outras "Pizzaria
+    do Zé" em outras cidades e não queremos confusão.
+  </p>
+
+  <ConceptTag bloco="Entidade" numero={7} nome="SameAs (verificação de entidade)" />
+  <p>Nossos perfis oficiais, todos com o mesmo nome e endereço, linkando de volta pra cá:</p>
+  <ul>
+    {SAME_AS.map((url) => <li><a href={url} rel="me noopener" target="_blank">{new URL(url).hostname}</a></li>)}
+  </ul>
+
+  <ConceptTag bloco="Entidade" numero={13} nome="N-E-E-A-T-T" />
+  <div class="review"><span class="stars">★★★★★</span> "Melhor massa de fermentação natural que já comi em SP." — Marina T., avaliação Google</div>
+  <div class="review"><span class="stars">★★★★★</span> "Citada na matéria do Guia Gastronômico Vila Mariana como referência em forno a lenha."</div>
+  <p>Prova real de fora, não autoelogio.</p>
+</Layout>

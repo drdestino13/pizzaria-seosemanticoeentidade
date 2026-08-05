@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`Pizza Napolitana em ${NEGOCIO.bairro} | ${NEGOCIO.nome}`}>
+  <h1>Pizza Napolitana</h1>
+  <ConceptTag bloco="Semântico" numero={4} nome="Contexto vence Palavra-chave Isolada" />
+  <p>
+    Nossa pizza napolitana é assada no forno a lenha a 400°C, com molho de tomate San
+    Marzano, mussarela de búfala e manjericão fresco — a receita tradicional de Nápoles,
+    servida aqui na {NEGOCIO.bairro}, {NEGOCIO.cidade}.
+  </p>
+  <p>
+    Entregamos em toda a {NEGOCIO.bairro} e bairros vizinhos. Fazemos essa pizza todos
+    os dias em que abrimos: {NEGOCIO.horario}.
+  </p>
+  <p>
+    (Contexto completo: ninguém confunde com bolacha ou com o bairro "Napolitana" —
+    a foto do forno a lenha e a explicação da receita deixam claro do que se trata.)
+  </p>
+</Layout>

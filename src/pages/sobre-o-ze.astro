@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ConceptTag from "../components/ConceptTag.astro";
+import { NEGOCIO, SITE } from "../data/negocio";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${SITE}/sobre-o-ze/#pessoa`,
+  name: NEGOCIO.dono,
+  jobTitle: "Fundador e pizzaiolo",
+  worksFor: { "@id": `${SITE}/#negocio` },
+  url: `${SITE}/sobre-o-ze/`,
+};
+---
+<Layout title={`Sobre o Zé — Fundador da ${NEGOCIO.nome}`} jsonLd={personSchema}>
+  <h1>Sobre o Zé</h1>
+  <ConceptTag bloco="Entidade" numero={13} nome="N-E-E-A-T-T" />
+  <p>
+    {NEGOCIO.dono} é pizzaiolo há 18 anos e fundou a {NEGOCIO.nome} em 2015, na
+    {NEGOCIO.bairro}. Assina os artigos técnicos do blog e já foi entrevistado pela
+    rádio local do bairro sobre a técnica de fermentação natural.
+  </p>
+  <p>
+    Essa página é a <strong>Entity Home do Zé como pessoa</strong>: o mesmo <code>@id</code>
+    referenciado no schema do restaurante (como <code>founder</code>) e no schema de
+    cada artigo do blog (como <code>author</code>) — é assim que o grafo conecta o
+    negócio à pessoa por trás dele.
+  </p>
+</Layout>
