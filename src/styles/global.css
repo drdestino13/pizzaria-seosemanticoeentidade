@@ -1,9 +1,15 @@
 :root {
   --brand: #8c1f28;
   --brand-dark: #5c1119;
+  --brand-light: #f3e6c6;
   --ink: #262220;
+  --ink-soft: #6b6058;
   --paper: #fbf7f2;
   --line: #e4d9cc;
+  --green: #2f6b3f;
+  --star: #e0a721;
+  --radius: 10px;
+  --shadow: 0 2px 6px rgba(38, 34, 32, 0.06), 0 10px 24px rgba(38, 34, 32, 0.06);
 }
 
 * { box-sizing: border-box; }
@@ -58,6 +64,7 @@ body {
   color: var(--ink);
   text-decoration: none;
   border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
 }
 .site-header nav a:hover { border-bottom-color: var(--brand); }
 
@@ -67,8 +74,18 @@ main {
   padding: 2.5rem 1.2rem;
 }
 
-h1 { color: var(--brand-dark); font-size: 2.1rem; margin-bottom: 0.3rem; }
+main.wide { max-width: 1040px; }
+
+h1 { color: var(--brand-dark); font-size: 2.1rem; margin-bottom: 0.3rem; line-height: 1.2; }
 h2 { color: var(--brand-dark); margin-top: 2.2rem; }
+h3 { color: var(--brand-dark); font-family: system-ui, sans-serif; font-size: 1.05rem; }
+
+.subtitle {
+  font-family: system-ui, sans-serif;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  margin-top: 0;
+}
 
 .natural-copy {
   background: #fff;
@@ -150,7 +167,7 @@ h2 { color: var(--brand-dark); margin-top: 2.2rem; }
 .faq-block dd { margin: 0.3rem 0 0; }
 
 .review { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 1rem; margin-bottom: 0.8rem; font-family: system-ui, sans-serif; font-size: 0.9rem; }
-.review .stars { color: #f5a623; }
+.review .stars { color: var(--star); }
 
 table {
   border-collapse: collapse;
@@ -177,6 +194,172 @@ pre.code-block {
   overflow-x: auto;
   font-size: 0.8rem;
   font-family: "Courier New", monospace;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  margin: -2.5rem -1.2rem 2rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(38,34,32,0) 30%, rgba(38,34,32,0.82) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 1.6rem 1.4rem;
+  color: #fff;
+}
+.hero-content h1 { color: #fff; margin: 0 0 0.3rem; }
+.hero-content .subtitle { color: #f1e9de; margin: 0; }
+.hero-badges { display: flex; gap: 0.5rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
+.hero-badge {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+}
+
+/* ---------- Menu / Cardápio ---------- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+.menu-item {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.menu-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+.menu-item-body {
+  padding: 0.9rem 1rem 1.1rem;
+  font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+.menu-item-body h3 { margin: 0; font-size: 1rem; }
+.menu-item-body p { margin: 0; color: var(--ink-soft); font-size: 0.85rem; flex: 1; }
+.menu-item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+}
+.price { font-weight: 700; color: var(--brand-dark); font-size: 1.05rem; }
+
+.add-to-cart {
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.add-to-cart:hover { background: var(--brand-dark); }
+
+/* ---------- Avaliações ---------- */
+.reviews-section {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 2.2rem 1.5rem;
+}
+.reviews-section-inner { max-width: 780px; margin: 0 auto; }
+.reviews-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-family: system-ui, sans-serif;
+  margin-bottom: 1.2rem;
+}
+.reviews-heading .score { font-size: 1.8rem; font-weight: 800; color: var(--brand-dark); }
+.reviews-heading .stars { color: var(--star); font-size: 1.1rem; }
+.reviews-heading .count { color: var(--ink-soft); font-size: 0.85rem; }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.review-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  font-family: system-ui, sans-serif;
+}
+.review-card .stars { color: var(--star); font-size: 0.85rem; }
+.review-card .author { font-weight: 700; font-size: 0.85rem; margin-top: 0.3rem; }
+.review-card .date { color: var(--ink-soft); font-size: 0.72rem; }
+.review-card p { font-size: 0.85rem; margin: 0.4rem 0 0; }
+
+/* ---------- Mapa ---------- */
+.map-embed {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 1rem 0;
+}
+.map-embed iframe { width: 100%; height: 260px; border: 0; display: block; }
+
+/* ---------- Fotos genéricas ---------- */
+.photo {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 1rem 0;
+  display: block;
+  object-fit: cover;
+}
+.photo-caption {
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin-top: -0.6rem;
+  margin-bottom: 1rem;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+}
+.photo-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
 }
 
 .site-index {

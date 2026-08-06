@@ -3,12 +3,28 @@ import Layout from "../layouts/Layout.astro";
 import { NEGOCIO } from "../data/negocio";
 ---
 <Layout title={`${NEGOCIO.nome} — Pizza Artesanal de Forno a Lenha em ${NEGOCIO.bairro}, ${NEGOCIO.cidade}`}>
-  <h1>{NEGOCIO.nome}</h1>
-  <p><strong>Pizza artesanal de forno a lenha na {NEGOCIO.bairro}, {NEGOCIO.cidade}/{NEGOCIO.estado}.</strong></p>
+  <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200&q=80');">
+    <div class="hero-content">
+      <div class="hero-badges">
+        <span class="hero-badge">Forno a lenha</span>
+        <span class="hero-badge">Fermentação 48h</span>
+        <span class="hero-badge">Nota 4,8</span>
+      </div>
+      <h1>{NEGOCIO.nome}</h1>
+      <p class="subtitle">Pizza artesanal de forno a lenha na {NEGOCIO.bairro}, {NEGOCIO.cidade}/{NEGOCIO.estado}.</p>
+    </div>
+  </div>
 
   <p>
     <strong>{NEGOCIO.nome}</strong><br />
     {NEGOCIO.endereco}<br />
     Tel: {NEGOCIO.telefoneExibicao} · {NEGOCIO.horario}
   </p>
+
+  <h2>Nossos Sabores Mais Pedidos</h2>
+  <div class="photo-grid">
+    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Pizza de calabresa artesanal saindo do forno a lenha" />
+    <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=600&q=80" alt="Massa de pizza sendo aberta à mão" />
+    <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=600&q=80" alt="Forno a lenha aceso, tijolo refratário" />
+  </div>
 </Layout>

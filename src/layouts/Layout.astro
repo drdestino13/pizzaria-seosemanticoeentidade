@@ -38,7 +38,52 @@ const { title, description = `${NEGOCIO.nome} — pizzaria de forno a lenha na $
     <main>
       <slot />
     </main>
+    <section class="reviews-section">
+      <div class="reviews-section-inner">
+        <div class="reviews-heading">
+          <span class="score">4,8</span>
+          <span class="stars">★★★★★</span>
+          <span class="count">227 avaliações no Google</span>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <div class="author">Marina Costa</div>
+            <div class="date">há 2 semanas</div>
+            <p>A massa de 48 horas faz toda diferença. Borda leve, nada pesada. Virou fixa aqui em casa.</p>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <div class="author">Rafael Nogueira</div>
+            <div class="date">há 1 mês</div>
+            <p>Forno a lenha de verdade, dá pra sentir o defumado leve na borda. Melhor napolitana da Vila Mariana.</p>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★☆</div>
+            <div class="author">Juliana Prado</div>
+            <div class="date">há 1 mês</div>
+            <p>Pedi a vegana e surpreendeu, queijo vegetal bem feito. Entrega demorou uns 10 min a mais que o previsto.</p>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <div class="author">Eduardo Salles</div>
+            <div class="date">há 2 meses</div>
+            <p>Fui atrás depois de ler sobre a fermentação natural no site. Bateu a expectativa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer class="site-footer">
+      <div class="footer-col">
+        <div class="map-embed">
+          <iframe
+            src={`https://www.google.com/maps?q=${encodeURIComponent(NEGOCIO.endereco)}&output=embed`}
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title={`Mapa: ${NEGOCIO.endereco}`}
+          ></iframe>
+        </div>
+      </div>
       <div class="footer-col">
         <strong>{NEGOCIO.nome}</strong><br />
         {NEGOCIO.endereco}<br />

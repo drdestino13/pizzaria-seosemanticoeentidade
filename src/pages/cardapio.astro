@@ -3,9 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import { NEGOCIO, SITE } from "../data/negocio";
 
 const sabores = [
-  { nome: "Pizza Calabresa Grande", preco: "45.00" },
-  { nome: "Pizza Mussarela de Búfala Grande", preco: "42.00" },
-  { nome: "Pizza Napolitana Grande", preco: "48.00" },
+  { nome: "Pizza Calabresa Artesanal", preco: "45.00", desc: "Calabresa defumada em casa, cebola roxa e azeitona preta.", foto: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" },
+  { nome: "Pizza Mussarela de Búfala", preco: "52.00", desc: "Mussarela de búfala fresca, manjericão e azeite trufado.", foto: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80" },
+  { nome: "Pizza Napolitana", preco: "48.00", desc: "Molho San Marzano, mussarela de búfala e manjericão fresco.", foto: "https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=600&q=80" },
+  { nome: "Pizza Frango com Catupiry", preco: "46.00", desc: "Frango desfiado, catupiry original e milho.", foto: "https://images.unsplash.com/photo-1548369937-47519962c11a?w=600&q=80" },
+  { nome: "Pizza Quatro Queijos", preco: "50.00", desc: "Mussarela, gorgonzola, parmesão e provolone.", foto: "https://images.unsplash.com/photo-1615719413546-198b25453f85?w=600&q=80" },
+  { nome: "Pizza Vegana", preco: "46.00", desc: "Queijo vegetal à base de castanha, rúcula e tomate cereja.", foto: "https://images.unsplash.com/photo-1552539618-7eec9b4d1796?w=600&q=80" },
 ];
 
 const cardapioSchema = {
@@ -25,7 +28,19 @@ const cardapioSchema = {
     Cada sabor tem seu próprio schema <code>Product</code> (veja o código-fonte desta
     página e procure por <code>application/ld+json</code>).
   </p>
-  <ul>
-    {sabores.map((s) => <li>{s.nome} — R$ {s.preco.replace(".00", ",00")}</li>)}
-  </ul>
+  <div class="menu-grid">
+    {sabores.map((s) => (
+      <div class="menu-item">
+        <img src={s.foto} alt={s.nome} loading="lazy" />
+        <div class="menu-item-body">
+          <h3>{s.nome}</h3>
+          <p>{s.desc}</p>
+          <div class="menu-item-footer">
+            <span class="price">R$ {s.preco.replace(".00", ",00")}</span>
+            <button class="add-to-cart" type="button">Adicionar</button>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
 </Layout>
