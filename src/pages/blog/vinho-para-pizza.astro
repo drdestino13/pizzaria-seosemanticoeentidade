@@ -1,0 +1,62 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { NEGOCIO, SITE } from "../../data/negocio";
+
+const postSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Qual Vinho Combina com Pizza? Guia de Harmonização",
+  datePublished: "2026-06-12",
+  author: { "@id": `${SITE}/sobre-o-ze/#pessoa`, name: NEGOCIO.dono },
+  publisher: { "@id": `${SITE}/#negocio` },
+};
+---
+<Layout title="Qual Vinho Combina com Pizza? Guia de Harmonização | Blog" jsonLd={postSchema}>
+  <h1>Qual Vinho Combina com Pizza? Guia de Harmonização</h1>
+  <p class="subtitle">Por {NEGOCIO.dono} · 12 de junho de 2026</p>
+  <img class="photo" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&q=80" alt="Taças de vinho tinto brindando à mesa" loading="lazy" />
+
+  <p>
+    A regra clássica de harmonização (tinto com carne, branco com peixe) não
+    funciona muito bem com pizza, porque o prato mistura massa fermentada,
+    molho ácido de tomate e queijo gorduroso ao mesmo tempo. O vinho ideal
+    precisa lidar com essas três coisas juntas, não só com um ingrediente.
+  </p>
+
+  <h2>Para pizzas de molho de tomate (calabresa, mussarela, napolitana)</h2>
+  <p>
+    Um tinto leve e com acidez alta é a escolha mais segura. Sangiovese
+    (a uva do Chianti) é o clássico italiano porque tem acidez parecida com a
+    do próprio molho de tomate, então um não briga com o outro. Se preferir
+    algo mais fácil de achar aqui, um tinto leve nacional, servido levemente
+    resfriado (uns 16°C, não temperatura ambiente), cumpre bem o papel.
+  </p>
+
+  <h2>Para pizzas brancas ou com queijo forte (quatro queijos)</h2>
+  <p>
+    Queijo forte pede vinho com mais corpo, mas cuidado com tanino alto — ele
+    reage mal com queijo gorduroso e deixa um gosto metálico. Um branco
+    encorpado, tipo Chardonnay com passagem em carvalho, ou um tinto leve e
+    frutado, funcionam melhor do que um tinto encorpado clássico.
+  </p>
+
+  <h2>Para pizza vegana ou com muito vegetal</h2>
+  <p>
+    Pizzas mais leves em gordura pedem vinho mais leve também. Um branco seco
+    e cítrico, ou um rosé bem gelado, equilibram sem pesar.
+  </p>
+
+  <h2>O erro mais comum</h2>
+  <p>
+    Servir tinto encorpado (Cabernet Sauvignon, Malbec) gelado ou tinto
+    temperatura ambiente de verão. Tinto quente demais realça o álcool e
+    esconde a fruta — para pizza, prefira sempre servir o tinto um pouco mais
+    fresco do que o normal, entre 14°C e 17°C.
+  </p>
+
+  <p>
+    Se quiser testar na prática, pergunta pro Zé qual sabor do{" "}
+    <a href="/cardapio/">cardápio</a> combina melhor com o vinho que você já
+    tem em casa — ele costuma recomendar na hora do pedido.
+  </p>
+</Layout>

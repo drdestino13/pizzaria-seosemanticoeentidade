@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NEGOCIO, SITE } from "../data/negocio";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${SITE}/sobre-o-ze/#pessoa`,
+  name: NEGOCIO.dono,
+  jobTitle: "Fundador e pizzaiolo",
+  worksFor: { "@id": `${SITE}/#negocio` },
+  url: `${SITE}/sobre-o-ze/`,
+  image: "https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=600&q=80",
+};
+---
+<Layout title={`Sobre o Zé — Fundador da ${NEGOCIO.nome}`} jsonLd={personSchema}>
+  <h1>Sobre o Zé</h1>
+  <img class="photo" src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=1000&q=80" alt="José Ricardo Almeida, pizzaiolo e fundador da Pizzaria do Zé, tirando uma pizza do forno a lenha" loading="lazy" />
+  <p class="subtitle">Pizzaiolo há 18 anos, fundador da {NEGOCIO.nome} na {NEGOCIO.bairro}.</p>
+
+  <p>
+    José Ricardo Almeida, o Zé, começou a trabalhar com pizza aos 19 anos,
+    numa pizzaria de bairro no Brás, onde aprendeu a abrir massa e controlar
+    forno a lenha observando o pizzaiolo titular por dois anos antes de
+    encostar a mão na primeira massa sozinho. Em 2011 passou seis meses em
+    Nápoles, na Itália, fazendo estágio informal em duas pizzarias
+    tradicionais do bairro de Forcella, de onde trouxe a técnica de
+    fermentação longa que usa até hoje.
+  </p>
+
+  <h2>A Pizzaria do Zé</h2>
+  <p>
+    Fundou a {NEGOCIO.nome} em 2015, na {NEGOCIO.bairro}, depois de juntar
+    dinheiro trabalhando como pizzaiolo contratado em três restaurantes
+    diferentes. Começou com um forno a lenha construído por um pedreiro
+    aposentado da região e cinco sabores no cardápio. Hoje a casa tem forno
+    próprio de alvenaria, seis sabores fixos e atende de terça a domingo.
+  </p>
+
+  <h2>A Técnica</h2>
+  <p>
+    A massa da casa fermenta por 48 horas em geladeira antes de ir ao forno,
+    técnica que o Zé considera o principal diferencial da pizzaria: fermentação
+    longa deixa a massa mais leve e a borda com bolhas de ar, sem o peso de
+    uma massa fermentada rápido. O forno trabalha a 400°C e cada pizza assa
+    em cerca de 90 segundos, no padrão da pizza napolitana tradicional.
+  </p>
+
+  <h2>Reconhecimento</h2>
+  <ul>
+    <li>Prêmio Sabor da Zona Sul 2026, categoria pizza tradicional</li>
+    <li>Citado pelo Guia Gastronômico Vila Mariana como uma das cinco melhores pizzarias do bairro</li>
+    <li>Nota 4,8 no Google, com mais de 200 avaliações</li>
+  </ul>
+
+  <h2>Fale com o Zé</h2>
+  <p>
+    Dúvidas sobre ingredientes, encomendas grandes ou parcerias podem ser
+    tratadas direto pelo telefone da casa: {NEGOCIO.telefoneExibicao}, de
+    {NEGOCIO.horario.toLowerCase()}.
+  </p>
+</Layout>

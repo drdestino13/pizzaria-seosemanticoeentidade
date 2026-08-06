@@ -1,0 +1,64 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { NEGOCIO, SITE } from "../../data/negocio";
+
+const postSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Pizza Esfriou? Veja Como Esquentar Sem Ressecar a Massa",
+  datePublished: "2026-05-20",
+  author: { "@id": `${SITE}/sobre-o-ze/#pessoa`, name: NEGOCIO.dono },
+  publisher: { "@id": `${SITE}/#negocio` },
+};
+---
+<Layout title="Pizza Esfriou? Veja Como Esquentar Sem Ressecar a Massa | Blog" jsonLd={postSchema}>
+  <h1>Pizza Esfriou? Veja Como Esquentar Sem Ressecar a Massa</h1>
+  <p class="subtitle">Por {NEGOCIO.dono} · 20 de maio de 2026</p>
+  <img class="photo" src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=1000&q=80" alt="Fatia de pizza sendo retirada do forno" loading="lazy" />
+
+  <p>
+    Microondas é o pior jeito de esquentar pizza: a massa perde a crocância e
+    o queijo derrete de forma irregular, ficando duro nas bordas e mole no
+    meio. Existem três formas melhores, dependendo do que você tem em casa.
+  </p>
+
+  <h2>Frigideira (a melhor opção pra quem não tem muito tempo)</h2>
+  <p>
+    Coloque a fatia numa frigideira antiaderente fria, ligue o fogo médio-baixo
+    e cubra com uma tampa. Deixe 3 a 4 minutos: a base frita levemente igual
+    no forno, o vapor preso pela tampa derrete o queijo por cima, e a massa
+    não resseca. É o método mais próximo de recriar o resultado do forno a
+    lenha em casa.
+  </p>
+
+  <h2>Forno convencional (a melhor opção pra reaquecer várias fatias)</h2>
+  <p>
+    Pré-aqueça o forno a 200°C. Coloque as fatias direto na grade (não numa
+    assadeira), o que deixa o ar circular embaixo e mantém a base crocante.
+    Leve ao forno por 8 a 10 minutos. Se a pizza veio da geladeira, deixe ela
+    em temperatura ambiente por 15 minutos antes de assar, pra não chocar a
+    massa com a diferença de temperatura.
+  </p>
+
+  <h2>Airfryer</h2>
+  <p>
+    Funciona parecido com o forno, mas mais rápido: 180°C por 4 a 5 minutos
+    já é suficiente. Cuidado pra não empilhar fatias, senão o ar não circula
+    igual e uma fatia esquenta mais que a outra.
+  </p>
+
+  <h2>Pizza pode ser congelada?</h2>
+  <p>
+    Pode, e sem perder muita qualidade se for feita do jeito certo: deixe
+    esfriar completamente antes de embalar (pizza quente gera umidade e
+    favorece formação de gelo) e embale fatia por fatia, não a pizza inteira.
+    Para assar direto do congelador, use forno a 220°C por 10 a 12 minutos,
+    sem descongelar antes.
+  </p>
+
+  <p>
+    Se você comprou a pizza aqui na <a href="/">{NEGOCIO.nome}</a> e sobrou
+    fatia, qualquer um desses três métodos mantém a massa de 48 horas de
+    fermentação com a textura que ela tem recém-saída do forno.
+  </p>
+</Layout>

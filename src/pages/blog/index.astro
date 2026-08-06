@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { NEGOCIO } from "../../data/negocio";
+
+const posts = [
+  {
+    slug: "pizza-grande-quantas-pessoas",
+    titulo: "Pizza Grande Serve Quantas Pessoas? Guia Pra Não Errar o Pedido",
+    resumo: "A regra prática pra calcular quantas pizzas pedir de acordo com o número de pessoas e o sabor escolhido.",
+    data: "8 de abril de 2026",
+    foto: "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=600&q=80",
+  },
+  {
+    slug: "como-esquentar-pizza",
+    titulo: "Pizza Esfriou? Veja Como Esquentar Sem Ressecar a Massa",
+    resumo: "Três formas de reaquecer pizza sem microondas, e como congelar sem perder qualidade.",
+    data: "20 de maio de 2026",
+    foto: "https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=600&q=80",
+  },
+  {
+    slug: "vinho-para-pizza",
+    titulo: "Qual Vinho Combina com Pizza? Guia de Harmonização",
+    resumo: "Por que a regra clássica de harmonização não funciona bem com pizza, e o que escolher pra cada tipo de sabor.",
+    data: "12 de junho de 2026",
+    foto: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80",
+  },
+];
+---
+<Layout title={`Blog | ${NEGOCIO.nome}`}>
+  <h1>Blog</h1>
+  <p class="subtitle">Dicas do Zé sobre pizza, vinho e como aproveitar melhor o seu pedido.</p>
+  <div class="photo-grid">
+    {posts.map((p) => (
+      <a href={`/blog/${p.slug}/`} style="text-decoration:none;color:inherit;">
+        <img src={p.foto} alt={p.titulo} loading="lazy" />
+      </a>
+    ))}
+  </div>
+  <div class="hub-links">
+    {posts.map((p) => (
+      <a href={`/blog/${p.slug}/`}>
+        <strong>{p.titulo}</strong><br />
+        <span style="font-weight:400;color:var(--ink-soft);font-size:0.85rem;">{p.resumo}</span>
+      </a>
+    ))}
+  </div>
+</Layout>
