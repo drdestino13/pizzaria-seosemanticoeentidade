@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pizzaria-seosemanticoeentidade.vercel.app/sitemap.xml
