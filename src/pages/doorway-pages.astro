@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`Entrega em ${NEGOCIO.bairro} | ${NEGOCIO.nome}`}>
+  <h1>Entrega em {NEGOCIO.bairro}</h1>
+  <p>
+    Atendemos toda a {NEGOCIO.bairro} com entrega em até 40 minutos, de terça
+    a domingo, das 18h às 23h. Peça pelo telefone {NEGOCIO.telefoneExibicao}.
+  </p>
+  <h2>Ruas Atendidas</h2>
+  <p>
+    Cobrimos toda a região entre a Avenida Ibirapuera e a Rua Domingos de
+    Morais, incluindo os arredores do Parque Ibirapuera.
+  </p>
+  <h2>Taxa de Entrega</h2>
+  <p>Grátis até 3km da pizzaria. Acima disso, taxa fixa de R$ 8,00.</p>
+  <h2>Tempo Médio</h2>
+  <p>35 a 40 minutos em dias normais, até 55 minutos em dias de grande movimento.</p>
+</Layout>

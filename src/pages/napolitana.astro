@@ -1,24 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ConceptTag from "../components/ConceptTag.astro";
-import CompareLink from "../components/CompareLink.astro";
-import { NEGOCIO } from "../data/negocio";
 ---
-<Layout title={`Pizza Napolitana em ${NEGOCIO.bairro} | ${NEGOCIO.nome}`}>
-  <h1>Pizza Napolitana</h1>
-  <ConceptTag bloco="Semântico" numero={4} nome="Contexto vence Palavra-chave Isolada" />
+<Layout title="Pizza Napolitana de Forno a Lenha | Pizzaria do Zé">
+  <h1>Pizza Napolitana de Forno a Lenha</h1>
   <p>
-    Nossa pizza napolitana é assada no forno a lenha a 400°C, com molho de tomate San
-    Marzano, mussarela de búfala e manjericão fresco — a receita tradicional de Nápoles,
-    servida aqui na {NEGOCIO.bairro}, {NEGOCIO.cidade}.
+    Nossa pizza napolitana é assada em forno a lenha a 400°C, com molho de
+    tomate San Marzano, mussarela de búfala e manjericão fresco. Entrega em
+    toda a Vila Mariana.
   </p>
+  <h2>Ficha Técnica</h2>
+  <ul>
+    <li>Massa: fermentação natural de 48 horas, farinha tipo 00</li>
+    <li>Molho: tomate San Marzano italiano, sem cozimento prévio</li>
+    <li>Queijo: mussarela de búfala fresca</li>
+    <li>Finalização: manjericão fresco e azeite extra virgem</li>
+    <li>Tempo de forno: 90 segundos a 400°C</li>
+  </ul>
+  <h2>Preço</h2>
+  <p>Napolitana Grande (35cm) — R$ 48,00.</p>
+  <h2>Por Que "Napolitana"?</h2>
   <p>
-    Entregamos em toda a {NEGOCIO.bairro} e bairros vizinhos. Fazemos essa pizza todos
-    os dias em que abrimos: {NEGOCIO.horario}.
+    O nome vem da técnica original de Nápoles: massa fina no centro, borda
+    alta e aerada, e poucos ingredientes de altíssima qualidade. Não é o mesmo
+    que o biscoito napolitano nem o bairro de mesmo nome — é a pizza mais
+    tradicional da Itália.
   </p>
-  <p>
-    (Contexto completo: ninguém confunde com bolacha ou com o bairro "Napolitana" —
-    a foto do forno a lenha e a explicação da receita deixam claro do que se trata.)
-  </p>
-  <CompareLink slug="napolitana" />
 </Layout>

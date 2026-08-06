@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={NEGOCIO.nome}>
+  <h1>{NEGOCIO.nome}</h1>
+  <p>Peça já a sua pizza! Entregamos rápido em {NEGOCIO.bairro} e região.</p>
+  <h2>Cardápio</h2>
+  <ul>
+    <li>Calabresa Artesanal - R$ 45,00</li>
+    <li>Mussarela de Búfala - R$ 52,00</li>
+    <li>Napolitana - R$ 48,00</li>
+    <li>Frango com Catupiry - R$ 46,00</li>
+  </ul>
+  <h2>Como Pedir</h2>
+  <p>Ligue para {NEGOCIO.telefoneExibicao} ou chame no WhatsApp. {NEGOCIO.horario}.</p>
+</Layout>

@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`Fale com a ${NEGOCIO.nome}`}>
+  <h1>O Que Dizem Sobre Nós</h1>
+  <p>Reunimos aqui algumas das menções que recebemos:</p>
+  <ul>
+    <li><a href="#">Pizzaria do Zé</a> — Blog Gastronômico Vila Mariana, matéria de julho</li>
+    <li><a href="#">esse restaurante aqui</a> — Guia da Cidade, seção de recomendações</li>
+    <li><a href="#">pizzariadoze.com.br</a> — Fórum de Delivery, tópico sobre pizzarias artesanais</li>
+    <li><a href="#">a pizzaria do Zé na Vila Mariana</a> — comentário no Instagram de um cliente</li>
+  </ul>
+  <h2>Fale Conosco</h2>
+  <p>Telefone: {NEGOCIO.telefoneExibicao}. {NEGOCIO.horario}.</p>
+</Layout>

@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`Pizza Boa Perto de Mim | ${NEGOCIO.nome}`}>
+  <h1>Pizza Boa Perto de Mim</h1>
+  <p>
+    Se você está com fome e busca pizza boa perto de você na {NEGOCIO.bairro},
+    a {NEGOCIO.nome} fica em {NEGOCIO.endereco}, com forno a lenha e massa de
+    fermentação natural.
+  </p>
+  <h2>Como Chegar</h2>
+  <p>
+    Estamos a 5 minutos a pé do metrô Vila Mariana, numa rua residencial
+    tranquila com fácil acesso.
+  </p>
+  <h2>Se Preferir Delivery</h2>
+  <p>
+    Também entregamos em toda a região. Ligue {NEGOCIO.telefoneExibicao} pra
+    pedir sem sair de casa.
+  </p>
+</Layout>

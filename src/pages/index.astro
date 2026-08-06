@@ -1,39 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ConceptTag from "../components/ConceptTag.astro";
-import { NEGOCIO, SAME_AS, schemaGrafoBase } from "../data/negocio";
+import { NEGOCIO } from "../data/negocio";
 ---
-<Layout
-  title={`${NEGOCIO.nome} — Pizza Artesanal de Forno a Lenha em ${NEGOCIO.bairro}, ${NEGOCIO.cidade}`}
-  jsonLd={schemaGrafoBase()}
->
-  <ConceptTag bloco="Entidade" numero={3} nome="Entity Home" />
+<Layout title={`${NEGOCIO.nome} — Pizza Artesanal de Forno a Lenha em ${NEGOCIO.bairro}, ${NEGOCIO.cidade}`}>
   <h1>{NEGOCIO.nome}</h1>
   <p><strong>Pizza artesanal de forno a lenha na {NEGOCIO.bairro}, {NEGOCIO.cidade}/{NEGOCIO.estado}.</strong></p>
-
-  <p>
-    Esta é a nossa <strong>Entity Home</strong>: a fonte oficial que responde "quem é
-    esse negócio" — em vez de a informação ficar espalhada e desencontrada por aí.
-    Veja o código-fonte desta página (<code>view-source</code>) e procure por
-    <code>application/ld+json</code>: o Google encontra ali um <code>Restaurant</code>
-    conectado a um <code>Person</code> (o fundador) e a um <code>WebSite</code>, tudo
-    no mesmo grafo.
-  </p>
 
   <p>
     <strong>{NEGOCIO.nome}</strong><br />
     {NEGOCIO.endereco}<br />
     Tel: {NEGOCIO.telefoneExibicao} · {NEGOCIO.horario}
-  </p>
-
-  <p>Perfis oficiais (mesmo nome e endereço em todos, linkando de volta pra cá):</p>
-  <ul>
-    {SAME_AS.map((url) => <li><a href={url} rel="me noopener" target="_blank">{new URL(url).hostname}</a></li>)}
-  </ul>
-
-  <h2>Explore os 24 conceitos da aula, um por um</h2>
-  <p>
-    Cada conceito de SEO Tradicional, Semântico e de Entidade tem sua própria página
-    de exemplo prático neste site — veja o menu no topo, organizado por bloco.
   </p>
 </Layout>

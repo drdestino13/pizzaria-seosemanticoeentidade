@@ -1,17 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ConceptTag from "../components/ConceptTag.astro";
-import CompareLink from "../components/CompareLink.astro";
-import { NEGOCIO } from "../data/negocio";
+import { NEGOCIO, SITE } from "../data/negocio";
 ---
-<Layout title="Nosso Domínio e Nossa Marca | Pizzaria do Zé">
-  <ConceptTag bloco="Tradicional" numero={3} nome="Exact Match Domain" />
-  <h1>Nosso Domínio e Nossa Marca</h1>
+<Layout title={`Quem Somos | ${NEGOCIO.nome}`}>
+  <h1>Quem Somos</h1>
   <p>
-    Nosso domínio é o nome da nossa própria marca — <code>pizzaria-seosemanticoeentidade.vercel.app</code> —
-    não uma palavra-chave genérica tipo "melhorpizzadesaopaulo.com.br". Construímos a
-    reputação em cima do nome <strong>{NEGOCIO.nome}</strong>, e é esse nome que o
-    Google aprende a confiar, não o texto da URL.
+    Bem-vindo ao site oficial da {NEGOCIO.nome} ({SITE.replace("https://", "")}),
+    fundada por {NEGOCIO.dono} na {NEGOCIO.bairro}.
   </p>
-  <CompareLink slug="dominio" />
+  <h2>Por Que Esse Nome?</h2>
+  <p>
+    O domínio leva o nome da marca porque é assim que os clientes já conhecem a
+    pizzaria: pelo nome do Zé, não por uma frase de palavra-chave. O nome do site
+    não faz a pizza ficar boa — a fermentação de 48 horas e o forno a lenha é
+    que fazem.
+  </p>
+  <h2>Nossas Redes</h2>
+  <p>Instagram, Facebook e iFood, sempre com o mesmo nome: {NEGOCIO.nome}.</p>
 </Layout>

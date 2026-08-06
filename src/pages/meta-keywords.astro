@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`Sobre a ${NEGOCIO.nome}`}>
+  <h1>Sobre a {NEGOCIO.nome}</h1>
+  <p>
+    A {NEGOCIO.nome} está na {NEGOCIO.bairro} há mais de 10 anos, servindo pizza
+    artesanal de forno a lenha feita por {NEGOCIO.dono}.
+  </p>
+  <h2>Nossa História</h2>
+  <p>
+    {NEGOCIO.dono} aprendeu a fazer pizza com o pai, imigrante italiano, e abriu a
+    pizzaria em 2014 depois de dez anos trabalhando em restaurantes de São Paulo.
+    O forno a lenha foi construído por um forneiro napolitano, seguindo a técnica
+    tradicional de tijolo refratário.
+  </p>
+  <h2>Horário de Funcionamento</h2>
+  <p>{NEGOCIO.horario}.</p>
+  <h2>Onde Estamos</h2>
+  <p>{NEGOCIO.endereco}. Tel: {NEGOCIO.telefoneExibicao}.</p>
+  <h2>Formas de Pagamento</h2>
+  <p>Cartão de crédito, débito, PIX e dinheiro.</p>
+</Layout>

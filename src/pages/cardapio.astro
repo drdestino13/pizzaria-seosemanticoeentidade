@@ -22,9 +22,8 @@ const cardapioSchema = {
 <Layout title={`Cardápio | ${NEGOCIO.nome}`} jsonLd={cardapioSchema}>
   <h1>Cardápio</h1>
   <p>
-    Cada sabor tem seu próprio schema <code>Product</code>, conectado ao schema do
-    negócio — veja os detalhes em <a href="/schema-de-entidade/">Schema de Entidade</a>
-    e <a href="/json-ld-grafo/">JSON-LD: o Grafo de Propriedades</a>.
+    Cada sabor tem seu próprio schema <code>Product</code> (veja o código-fonte desta
+    página e procure por <code>application/ld+json</code>).
   </p>
   <ul>
     {sabores.map((s) => <li>{s.nome} — R$ {s.preco.replace(".00", ",00")}</li>)}

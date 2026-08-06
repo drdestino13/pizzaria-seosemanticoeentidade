@@ -1,19 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ConceptTag from "../components/ConceptTag.astro";
-import CompareLink from "../components/CompareLink.astro";
 ---
-<Layout title="Nossa Área de Entrega | Pizzaria do Zé">
-  <ConceptTag bloco="Semântico" numero={3} nome="NLP e BERT" />
-  <h1>Nossa Área de Entrega</h1>
-  <div class="natural-copy">
-    Aceitamos pedido sem taxa de entrega até 3 km de distância da loja.
-  </div>
+<Layout title="Entrega Grátis até 3km | Pizzaria do Zé">
+  <h1>Entrega Grátis até 3km</h1>
   <p>
-    Frase clara e direta — o Google não precisa mais das palavras exatas da busca
-    pra entender o que você quis dizer, mas precisa que a frase faça sentido pra
-    um humano de verdade. Não existe truque de "otimizar pro BERT": existe escrever
-    claro.
+    Aceitamos pedido sem taxa de entrega até 3 km da pizzaria. Acima disso,
+    cobramos uma taxa fixa de R$ 8.
   </p>
-  <CompareLink slug="nlp-bert" />
+  <h2>Como Calculamos a Distância</h2>
+  <p>
+    Usamos o seu endereço completo pra calcular a distância exata até a
+    pizzaria. Se você mora até 3km de nós, a entrega é grátis automaticamente
+    no momento do pedido.
+  </p>
+  <h2>Bairros Dentro do Raio Grátis</h2>
+  <p>
+    Vila Mariana, parte da Vila Clementino e parte do Paraíso costumam
+    entrar no raio de 3km, dependendo do endereço exato.
+  </p>
+  <h2>E se For Mais Longe?</h2>
+  <p>
+    Entregamos em toda a zona sul, mas acima de 3km cobramos taxa fixa de
+    R$ 8,00, independente da distância exata dentro dessa faixa.
+  </p>
 </Layout>

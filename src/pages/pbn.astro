@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`Imprensa | ${NEGOCIO.nome}`}>
+  <h1>Imprensa</h1>
+  <p>
+    Reunimos aqui as menções reais que recebemos de veículos e criadores de
+    conteúdo da nossa área.
+  </p>
+  <h2>Blog Gastronômico Vila Mariana</h2>
+  <p>
+    "A massa de 48 horas de fermentação da Pizzaria do Zé é uma das melhores que
+    já provamos na zona sul. A borda alta e aerada lembra as pizzarias
+    tradicionais de Nápoles." — matéria de julho de 2026.
+  </p>
+  <h2>Guia de Restaurantes da Vila Mariana</h2>
+  <p>
+    A {NEGOCIO.nome} está listada como uma das 5 pizzarias artesanais
+    recomendadas do bairro, ao lado de outros estabelecimentos com forno a lenha.
+  </p>
+</Layout>

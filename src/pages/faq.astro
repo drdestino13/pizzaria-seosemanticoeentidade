@@ -1,7 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ConceptTag from "../components/ConceptTag.astro";
-import CompareLink from "../components/CompareLink.astro";
 import { NEGOCIO } from "../data/negocio";
 
 const perguntas = [
@@ -24,12 +22,6 @@ const faqSchema = {
 ---
 <Layout title={`Perguntas Frequentes | ${NEGOCIO.nome}`} jsonLd={faqSchema}>
   <h1>Perguntas Frequentes</h1>
-  <ConceptTag bloco="Semântico" numero={6} nome="Query Fan-Out" />
-  <p>
-    Quando alguém pergunta "dá pra jantar hoje?", por dentro a IA quebra isso em várias
-    perguntas: preço, tempo de entrega, área atendida, opções sem lactose, horário.
-    Respondemos todas aqui, com schema <code>FAQPage</code> real:
-  </p>
   <dl>
     {perguntas.map((p) => (
       <div class="faq-block">
@@ -38,6 +30,4 @@ const faqSchema = {
       </div>
     ))}
   </dl>
-
-  <CompareLink slug="faq" />
 </Layout>

@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`Fale Conosco | ${NEGOCIO.nome}`}>
+  <h1>Fale Conosco</h1>
+  <p>{NEGOCIO.telefoneExibicao}</p>
+  <h2>Endereço</h2>
+  <p>{NEGOCIO.endereco}</p>
+  <h2>Horário</h2>
+  <p>{NEGOCIO.horario}</p>
+  <h2>WhatsApp</h2>
+  <p>Também atendemos pelo mesmo número via WhatsApp, das 18h às 23h.</p>
+</Layout>

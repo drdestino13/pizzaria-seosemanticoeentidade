@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`Pizzaria Bem Avaliada | ${NEGOCIO.nome}`}>
+  <h1>Pizzaria Bem Avaliada</h1>
+  <p>
+    {NEGOCIO.nome}, nota 4,8 no Google, endereço {NEGOCIO.endereco}.
+  </p>
+  <h2>Números Reais</h2>
+  <ul>
+    <li>4,8 de nota média, com mais de 200 avaliações no Google</li>
+    <li>Prêmio Sabor da Zona Sul 2026, categoria pizza tradicional</li>
+    <li>Mencionada pelo Guia Gastronômico Vila Mariana como Top 5 da região</li>
+  </ul>
+  <h2>Dados de Contato Verificáveis</h2>
+  <p>
+    Telefone: {NEGOCIO.telefoneExibicao}. Horário: {NEGOCIO.horario}. Endereço
+    idêntico em todos os nossos perfis oficiais.
+  </p>
+</Layout>

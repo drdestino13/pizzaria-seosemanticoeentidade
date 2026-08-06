@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`A ${NEGOCIO.nome} Está Aberta Agora?`}>
+  <h1>A {NEGOCIO.nome} Está Aberta Agora?</h1>
+  <p>Sim! Estamos abertos agora, {NEGOCIO.horario}.</p>
+  <h2>Outras Perguntas Comuns</h2>
+  <p><strong>Vocês entregam nesse horário?</strong> Sim, o delivery funciona durante todo o horário de funcionamento.</p>
+  <p><strong>Preciso ligar antes de ir?</strong> Não é obrigatório, mas recomendamos nos dias de maior movimento (sextas e sábados).</p>
+  <p><strong>Tem estacionamento?</strong> Temos 2 vagas na frente da loja, além de estacionamento pago a 50 metros.</p>
+</Layout>

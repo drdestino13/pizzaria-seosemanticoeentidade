@@ -1,18 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ConceptTag from "../components/ConceptTag.astro";
-import CompareLink from "../components/CompareLink.astro";
+import { NEGOCIO } from "../data/negocio";
 ---
-<Layout title="Onde Estamos Cadastrados | Pizzaria do Zé">
-  <ConceptTag bloco="Tradicional" numero={5} nome="Diretórios e Troca de Links" />
-  <h1>Onde Estamos Cadastrados</h1>
-  <ul>
-    <li>Google Perfil da Empresa (completo, com fotos e horário)</li>
-    <li>Guia Gastronômico Vila Mariana (guia real da cidade)</li>
-  </ul>
+<Layout title={`Onde Nos Encontrar | ${NEGOCIO.nome}`}>
+  <h1>Onde Nos Encontrar</h1>
   <p>
-    Só valem uns poucos cadastros relevantes, não uma lista gigante de diretórios
-    genéricos ou troca de link com lojas sem relação nenhuma com comida.
+    Preferimos estar bem cadastrados em poucos lugares relevantes do que em
+    centenas de diretórios genéricos.
   </p>
-  <CompareLink slug="diretorios" />
+  <h2>Google Perfil da Empresa</h2>
+  <p>
+    Nosso cadastro está completo: fotos atualizadas, horário de funcionamento,
+    cardápio e mais de 200 avaliações com nota 4,8.
+  </p>
+  <h2>Guia Gastronômico Vila Mariana</h2>
+  <p>Estamos listados na categoria "Pizzarias Artesanais", com descrição e fotos do forno a lenha.</p>
+  <h2>Endereço Completo</h2>
+  <p>{NEGOCIO.endereco}</p>
 </Layout>

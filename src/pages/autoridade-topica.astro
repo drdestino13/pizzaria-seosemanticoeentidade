@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NEGOCIO } from "../data/negocio";
+---
+<Layout title={`A Referência em Pizza da ${NEGOCIO.bairro} | ${NEGOCIO.nome}`}>
+  <h1>A Referência em Pizza da {NEGOCIO.bairro}</h1>
+  <p>
+    Tipos de massa, comparativos de sabor, dicas de harmonização e tudo sobre
+    forno a lenha, num só lugar.
+  </p>
+  <h2>Nossos Conteúdos Sobre Pizza</h2>
+  <ul>
+    <li><a href="/pizza-artesanal/">Tudo Sobre Pizza Artesanal</a></li>
+    <li><a href="/pizza-artesanal/massa/">A Massa</a></li>
+    <li><a href="/pizza-artesanal/fermentacao/">Fermentação Natural</a></li>
+    <li><a href="/pizza-artesanal/forno-a-lenha/">Forno a Lenha</a></li>
+    <li><a href="/pizza-artesanal/queijo/">Escolha do Queijo</a></li>
+    <li><a href="/napolitana/">Pizza Napolitana</a></li>
+  </ul>
+  <h2>Por Que Somos Referência</h2>
+  <p>
+    Não é só pela pizza em si: é por explicar de verdade o processo, do
+    ingrediente ao forno, pra quem quer entender e não só comer.
+  </p>
+</Layout>
