@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { NEGOCIO } from "../data/negocio";
+import { NEGOCIO, schemaGrafoBase } from "../data/negocio";
 ---
-<Layout title={`${NEGOCIO.nome} — Pizza Artesanal de Forno a Lenha em ${NEGOCIO.bairro}, ${NEGOCIO.cidade}`}>
+<Layout title={`${NEGOCIO.nome} — Pizza Artesanal de Forno a Lenha em ${NEGOCIO.bairro}, ${NEGOCIO.cidade}`} jsonLd={schemaGrafoBase()}>
   <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200&q=80');">
     <div class="hero-content">
       <div class="hero-badges">

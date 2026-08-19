@@ -1,0 +1,16 @@
+# Pizzaria do Zé
+
+> Pizzaria de forno a lenha na Vila Mariana, São Paulo. Site de demonstração educacional da aula "As 3 Eras do SEO", aplicando SEO Semântico e de Entidade. Não é um negócio real.
+
+## Páginas principais
+
+- [Início](https://pizzaria-seosemanticoeentidade.vercel.app/): apresentação do negócio, localização, contato e avaliações.
+- [Cardápio](https://pizzaria-seosemanticoeentidade.vercel.app/cardapio/): sabores, preços e schema de Menu.
+- [Sobre o Zé](https://pizzaria-seosemanticoeentidade.vercel.app/sobre-o-ze/): fundador, história e credenciais.
+- [Pizza Artesanal](https://pizzaria-seosemanticoeentidade.vercel.app/pizza-artesanal/): fermentação de 48h, forno a lenha, massa e queijo.
+- [Blog](https://pizzaria-seosemanticoeentidade.vercel.app/blog/): harmonização de vinho, porções e como reaquecer pizza.
+- [Perguntas Frequentes](https://pizzaria-seosemanticoeentidade.vercel.app/faq/): dúvidas comuns, com schema FAQPage.
+
+## Contraponto
+
+Este site demonstra SEO Semântico e de Entidade. O contraponto de SEO tradicional está em https://pizzaria-seotradicional.vercel.app/.
